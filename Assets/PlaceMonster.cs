@@ -13,7 +13,13 @@ public class PlaceMonster : MonoBehaviour {
 	}
 	
 	void Update () {
-		
+		foreach(Touch touch in Input.touches)
+        {
+            if(touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
+            {
+                OnMouseUp();
+            }
+        }
 	}
 
     void OnMouseUp()
